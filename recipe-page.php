@@ -1,20 +1,28 @@
 <?php
-require 'db.php';
+require_once "db.php";
+require_once "RecipePage.php";
 
-$id = $_POST['currentRecipe'];
+$currentUser = [
+    "name" => "Misha",
+    "email" => "mishamak@gmail.com",
+    "photo" => "images/avatar.jpeg",
+    "password" => "123123123",
+    "recipes" => getCurrentUserRecipes()
+];
 
-$recipes = getCurrentUserRecipes();
+$recipe = null;
 
-$currentRecipe = null;
-
-foreach ($recipes as $item) {
-    if($item['id'] == $id) {
-        $currentRecipe = $item;
+foreach ($currentUser['recipes'] as $item) {
+    if($_POST['currentRecipeId'] == $item['id']) {
+        $recipe = $item;
+        break;
     }
 }
 
-if($currentRecipe == null) {
+if($recipe == null) {
     die("No such recipe");
 }
 
-$currentRecipe = new Recipe($currentRecipe['id'], $currentRecipe['title'], $currentRecipe['photo'], $currentRecipe['description'], $currentRecipe['steps'], $currentRecipe['time'], $currentRecipe['likes'], $currentRecipe['views']);
+$page = new RecipePage(true, $currentUser, $recipe);
+
+$page->loadPage();

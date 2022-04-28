@@ -14,7 +14,7 @@ class MainPage extends WebPage
 
         if($currentUser != null) {
             foreach ($currentUser['recipes'] as $item) {
-                $this->recipes[] = new Recipe($item['id'], $item['title'], $item['photo'], $item['description'], $item['steps'], $item['time'], $item['likes'], $item['views']);
+                $this->recipes[] = new Recipe($item);
             }
         }
     }
