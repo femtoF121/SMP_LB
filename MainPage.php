@@ -1,19 +1,41 @@
 <?php
 require_once "WebPage.php";
+require_once "Recipe.php";
 
 class MainPage extends WebPage
 {
     private $currentUser;
+    private array $recipes = [];
 
     public function __construct($isAuthorized, $currentUser = null)
     {
         parent::__construct($isAuthorized);
         $this->currentUser = $currentUser;
+
+        if($currentUser != null) {
+            foreach ($currentUser['recipes'] as $item) {
+                $this->recipes[] = new Recipe($item['id'], $item['title'], $item['photo'], $item['description'], $item['steps'], $item['time'], $item['likes'], $item['views']);
+            }
+        }
     }
 
     function getContent()
     {
-        include 'components/main.php';
+        echo "
+        <main>
+            <div class='container container-fluid'>
+            <div class='row row-cols-4 g-3'>
+        ";
+
+        foreach ($this->recipes as $oneRecipe) {
+            $oneRecipe->renderRecipeCard();
+        }
+
+        echo "
+            </div>
+            </div>
+        </main>        
+        ";
     }
 
     function loadPage()
