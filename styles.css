@@ -114,3 +114,42 @@ header .container {
     background-color: rgba(190, 190, 190, 0.84);
     transition: background-color 0.5s ease-in-out;
 }
+
+.recipe-container {
+    display: flex;
+    flex-direction: column;
+    width: 77%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 20px;
+}
+
+.recipe-page-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+}
+
+.recipe-top {
+    display: flex;
+}
+
+.recipe-main-photo {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.recipe-step-photo {
+    width: 70%;
+    border-radius: 15px;
+    padding: 5px;
+}
+
+.recipe-ingredients-container {
+    flex-basis: 50%;
+    background-color: #fff;
+    border-radius: 20px;
+    margin-left: 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+}
