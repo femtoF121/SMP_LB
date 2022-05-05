@@ -1,13 +1,13 @@
 <?php
-require_once "db.php";
 require_once "RecipePage.php";
+require_once "models/RecipesModel.php";
 
 $currentUser = [
     "name" => "Misha",
     "email" => "mishamak@gmail.com",
     "photo" => "images/avatar.jpeg",
     "password" => "123123123",
-    "recipes" => getCurrentUserRecipes()
+    "recipes" => recipes_getAll()
 ];
 
 $recipe = null;

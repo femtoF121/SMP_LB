@@ -35,7 +35,7 @@ class WebPage
 <header>
     <nav class='navbar navbar-expand-lg'>
         <div class='container container-fluid'>
-            <a class='logo mr-4' href='#'>
+            <a class='logo mr-4' href='index.php'>
                 <img class='logo' src='images/logo.svg' alt='logo'/>
             </a>
             <div class='collapse navbar-collapse'>
