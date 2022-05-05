@@ -26,12 +26,17 @@ class Recipe
         $this->recipeArr = $recipe;
     }
 
+    public function cloneFrom($oldRecipe)
+    {
+        return new Recipe($oldRecipe->recipeArr);
+    }
+
     public function renderRecipeCard() {
         echo "
 <div class='col'>
     <div class='card' style='width: 18rem;'>
         <form method='post' action='recipe-page.php'>
-            <img src='$this->photo' class='card-img-top' alt='$this->title'>
+            <img src='images/$this->photo' class='card-img-top' alt='$this->title'>
             <input type='hidden' name='currentRecipeId' value='$this->id'>
             <div class='card-body'>
                 <h5 class='card-title'>$this->title</h5>
@@ -53,12 +58,14 @@ class Recipe
 <div class='recipe-container'>
     <div class='recipe-page-title'><h1>$this->title</h1></div>    
     <div class='recipe-top'>
-        <div style='flex-basis: 50%; margin-right: 15px'><img src='$this->photo' class='recipe-main-photo' alt='$this->title'></div>
+        <div style='flex-basis: 50%; margin-right: 15px'>
+            <img src='images/$this->photo' class='recipe-main-photo' alt='$this->title'>
+        </div>
         <div class='recipe-ingredients-container'>
             <div style='display: flex; flex-direction: column; padding: 20px; height: 100%'>
                 <h3>Ingredients</h3>
                 <div>
-                    <ul>";
+                    <ul class='ingredients-list'>";
 
                 for ($i = 0; $i < count($this->ingredients); $i++) {
                     echo "
@@ -81,7 +88,7 @@ class Recipe
     </div><br>
     <div><h3>Steps of cooking:</h3></div>
     <div><h5>Cooking time: $this->time</h5></div>
-    <div class='row row-cols-2 g-3'>";
+    <div class='row row-cols-2 g-3 justify-content-center'>";
 
         for ($i = 0; $i < count($this->steps); $i++) {
             $this->renderRecipeStep($i);
@@ -94,10 +101,15 @@ class Recipe
     }
 
     public function renderRecipeStep($num) {
+        $stepNum = $num + 1;
+
             echo "
-<div class='col'>
-    <div><img src='".$this->steps[$num]['photo']."' class='recipe-step-photo' alt=''></div>
-    <div>".$this->steps[$num]['text']."</div>
+<div class='col d-flex flex-column align-items-center justify-content-end'>
+    <img src='images/".$this->steps[$num]['photo']."' class='recipe-step-photo' alt=''>
+    <div>
+    <b>$stepNum. </b>
+    ".$this->steps[$num]['description']."
+    </div>
 </div>";
     }
 }

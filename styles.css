@@ -124,6 +124,10 @@ header .container {
     padding-bottom: 20px;
 }
 
+.ingredients-list > li:not(:last-of-type) {
+    border-bottom: 1px solid #ccc;
+}
+
 .recipe-page-title {
     display: flex;
     align-items: center;
