@@ -55,48 +55,50 @@ class Recipe
 
     public function renderOpenedRecipe() {
         echo "
-<div class='recipe-container'>
-    <div class='recipe-page-title'><h1>$this->title</h1></div>    
-    <div class='recipe-top'>
-        <div style='flex-basis: 50%; margin-right: 15px'>
-            <img src='images/$this->photo' class='recipe-main-photo' alt='$this->title'>
-        </div>
-        <div class='recipe-ingredients-container'>
-            <div style='display: flex; flex-direction: column; padding: 20px; height: 100%'>
-                <h3>Ingredients</h3>
-                <div>
-                    <ul class='ingredients-list'>";
+<main>
+    <div class='recipe-container'>
+        <div class='recipe-page-title'><h1>$this->title</h1></div>    
+        <div class='recipe-top'>
+            <div style='flex-basis: 50%; margin-right: 15px'>
+                <img src='images/$this->photo' class='recipe-main-photo' alt='$this->title'>
+            </div>
+            <div class='recipe-ingredients-container'>
+                <div style='display: flex; flex-direction: column; padding: 20px; height: 100%'>
+                    <h3>Ingredients</h3>
+                    <div>
+                        <ul class='ingredients-list'>";
 
-                for ($i = 0; $i < count($this->ingredients); $i++) {
-                    echo "
-                        <li style='display: flex; justify-content: space-between; margin: 5px 0 5px 0'>
-                            <div>".$this->ingredients[$i]['name'].":</div>
-                            <div>".$this->ingredients[$i]['quantity']." ".$this->ingredients[$i]['m_unit']."</div>
-                        </li>
-                    ";
-                }
+                    for ($i = 0; $i < count($this->ingredients); $i++) {
+                        echo "
+                            <li style='display: flex; justify-content: space-between; margin: 5px 0 5px 0'>
+                                <div>".$this->ingredients[$i]['name'].":</div>
+                                <div>".$this->ingredients[$i]['quantity']." ".$this->ingredients[$i]['m_unit']."</div>
+                            </li>
+                        ";
+                    }
 
-            echo "</ul>
-                </div>
-                <div style='display: flex; align-items: flex-end; flex-grow: 1'>$this->description</div>
-                <div style='display: flex; justify-content: space-between; margin: 15px 0 5px 0'>
-                    <div><img src='images/view.png' alt='Views' width='20px'> $this->views</div>
-                    <div><img src='images/like.png' alt='Likes' width='20px'> $this->likes</div>
+                echo "</ul>
+                    </div>
+                    <div style='display: flex; align-items: flex-end; flex-grow: 1'>$this->description</div>
+                    <div style='display: flex; justify-content: space-between; margin: 15px 0 5px 0'>
+                        <div><img src='images/view.png' alt='Views' width='20px'> $this->views</div>
+                        <div><img src='images/like.png' alt='Likes' width='20px'> $this->likes</div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div><br>
-    <div><h3>Steps of cooking:</h3></div>
-    <div><h5>Cooking time: $this->time</h5></div>
-    <div class='row row-cols-2 g-3 justify-content-center'>";
+        </div><br>
+        <div><h3>Steps of cooking:</h3></div>
+        <div><h5>Cooking time: $this->time</h5></div>
+        <div class='row row-cols-2 g-3 justify-content-center'>";
 
-        for ($i = 0; $i < count($this->steps); $i++) {
-            $this->renderRecipeStep($i);
-        }
+            for ($i = 0; $i < count($this->steps); $i++) {
+                $this->renderRecipeStep($i);
+            }
 
-        echo "    
-    </div>        
-</div>
+            echo "    
+        </div>        
+    </div>
+</main>
 ";
     }
 
@@ -113,6 +115,7 @@ class Recipe
 </div>";
     }
 }
+
 
 
 

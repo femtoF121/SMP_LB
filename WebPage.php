@@ -44,7 +44,7 @@ class WebPage
                         <button class='secondaryBtn'>Find recipe</button>
                     </li>
                     <li class='nav-item'>
-                        <button class='secondaryBtn'>Add recipe</button>
+                        <a href='adding-recipe-page.php'><button class='secondaryBtn'>Add recipe</button></a>
                     </li>
                 </ul>
                 <ul class='navbar-nav me-auto social-medias'>
