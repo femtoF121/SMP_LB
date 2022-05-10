@@ -247,3 +247,31 @@ header .container {
     cursor: pointer;
     margin: 0 auto;
 }
+
+.auth__container {
+    background: url("images/auth-bg.jpg") center/cover no-repeat;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.forms__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 10px 30px;
+    border-radius: 15px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    min-height: 280px;
+    min-width: 400px;
+}
