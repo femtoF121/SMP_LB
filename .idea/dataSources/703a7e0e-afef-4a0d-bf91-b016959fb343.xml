@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="cookdise">
-  <database-model serializer="dbm" dbms="SQLITE" family-id="SQLITE" format-version="4.38">
+  <database-model serializer="dbm" dbms="SQLITE" family-id="SQLITE" format-version="4.32">
     <root id="1">
       <ServerVersion>3.36.0</ServerVersion>
     </root>
@@ -1322,9 +1322,9 @@
       <Primary>1</Primary>
     </key>
     <column id="487" parent="474" name="ip_id">
-      <AutoIncrement>1</AutoIncrement>
       <DataType>integer|0s</DataType>
       <Position>1</Position>
+      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="488" parent="474" name="ip_address">
       <DataType>varchar(255)|0s</DataType>
@@ -1340,9 +1340,9 @@
       <Primary>1</Primary>
     </key>
     <column id="491" parent="475" name="id">
-      <AutoIncrement>1</AutoIncrement>
       <DataType>integer|0s</DataType>
       <Position>1</Position>
+      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="492" parent="475" name="title">
       <DataType>varchar(255)|0s</DataType>
@@ -1414,6 +1414,7 @@
     </column>
     <index id="509" parent="478" name="sqlite_autoindex_statistics_1">
       <ColNames>date</ColNames>
+      <ColumnCollations></ColumnCollations>
       <NameSurrogate>1</NameSurrogate>
       <Unique>1</Unique>
     </index>
@@ -1442,6 +1443,8 @@
     <index id="515" parent="479" name="sqlite_autoindex_steps_1">
       <ColNames>step_number
 recipe_id</ColNames>
+      <ColumnCollations>
+</ColumnCollations>
       <NameSurrogate>1</NameSurrogate>
       <Unique>1</Unique>
     </index>
@@ -1452,12 +1455,13 @@ recipe_id</ColNames>
       <UnderlyingIndexName>sqlite_autoindex_steps_1</UnderlyingIndexName>
     </key>
     <column id="517" parent="480" name="user_id">
-      <AutoIncrement>1</AutoIncrement>
       <DataType>integer|0s</DataType>
       <Position>1</Position>
+      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="518" parent="480" name="username">
       <DataType>varchar(255)|0s</DataType>
+      <DefaultExpression>user</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
@@ -1471,7 +1475,12 @@ recipe_id</ColNames>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <key id="521" parent="480" name="users_pk">
+    <column id="521" parent="480" name="photo">
+      <DataType>varchar(255)|0s</DataType>
+      <DefaultExpression>&apos;avatar.jpeg&apos;</DefaultExpression>
+      <Position>5</Position>
+    </column>
+    <key id="522" parent="480" name="users_pk">
       <ColNames>user_id</ColNames>
       <Primary>1</Primary>
     </key>
