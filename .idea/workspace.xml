@@ -5,15 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="23aa0825-37b1-47a5-accd-b02a005261f9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/AddingRecipePage.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/adding-recipe-page.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/attachment.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/703a7e0e-afef-4a0d-bf91-b016959fb343.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/703a7e0e-afef-4a0d-bf91-b016959fb343.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recipe.php" beforeDir="false" afterPath="$PROJECT_DIR$/Recipe.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebPage.php" beforeDir="false" afterPath="$PROJECT_DIR$/WebPage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
