@@ -12,8 +12,8 @@ class MainPage extends WebPage
         parent::__construct($isAuthorized);
         $this->currentUser = $currentUser;
 
-        if($currentUser != null) {
-            foreach ($currentUser['recipes'] as $item) {
+        if(!empty($_SESSION['recipes'])) {
+            foreach ($_SESSION['recipes'] as $item) {
                 $this->recipes[] = new Recipe($item);
             }
         }

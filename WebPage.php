@@ -29,7 +29,7 @@ class WebPage
     }
 
     function getHeader($currentUser) {
-        $userPhoto = $currentUser['photo'];
+        $userPhoto = "images/" . $currentUser['photo'];
         if($this->isAuthorized) {
             echo "
 <header>
