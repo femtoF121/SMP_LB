@@ -38,6 +38,20 @@ class DB
         return null;
     }
 
+    public function executeBool($query, $params = [])
+    {
+        if ($query) {
+            try {
+                $stmt = $this->pdo->prepare($query);
+                return $stmt->execute($params);
+
+            } catch (PDOException $exception) {
+                return $exception->errorInfo;
+            }
+        }
+        return null;
+    }
+
     public function getTable($tableName)
     {
         try {

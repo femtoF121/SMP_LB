@@ -1,0 +1,168 @@
+Index: WebPage.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\r\n\r\nclass WebPage\r\n{\r\n    protected $isAuthorized = true;\r\n\r\n    public function __construct($isAuthorized)\r\n    {\r\n        $this->isAuthorized = $isAuthorized;\r\n    }\r\n\r\n    function loadStyles()\r\n    {\r\n        echo \"\r\n<head>\r\n    <meta charset='UTF'>\r\n    <meta name='viewport'\r\n          content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'>\r\n    <meta http-equiv='X-UA-Compatible' content='ie=edge'>\r\n    <title>CookDise</title>\r\n    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3' crossorigin='anonymous'>\r\n    <link rel='stylesheet' href='styles.css'>\r\n    <link rel='preconnect' href='https://fonts.googleapis.com'>\r\n    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>\r\n    <link href='https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Montserrat:wght@400;700&display=swap' rel='stylesheet'>\r\n    <script defer src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js' integrity='sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p' crossorigin='anonymous'></script>\r\n</head>        \r\n\";\r\n    }\r\n\r\n    function getHeader($currentUser) {\r\n        $userPhoto = \"images/\" . $currentUser['photo'];\r\n        if($this->isAuthorized) {\r\n            echo \"\r\n<header>\r\n    <nav class='navbar navbar-expand-lg'>\r\n        <div class='container container-fluid'>\r\n            <a class='logo mr-4' href='index.php'>\r\n                <img class='logo' src='images/logo.svg' alt='logo'/>\r\n            </a>\r\n            <div class='collapse navbar-collapse'>\r\n                <ul class='navbar-nav me-auto' style='margin-left: 50px'>\r\n                    <li class='nav-item' style='margin-right: 20px'>\r\n                        <button class='secondaryBtn'>Find recipe</button>\r\n                    </li>\r\n                    <li class='nav-item'>\r\n                        <a href='adding-recipe-page.php'><button class='secondaryBtn'>Add recipe</button></a>\r\n                    </li>\r\n                </ul>\r\n                <ul class='navbar-nav me-auto social-medias'>\r\n                    <li class='nav-item'>\r\n                        <a class='nav-link active' aria-current='page' href='#'>\r\n                            <img src='images/telegram.svg' alt='telegram'>\r\n                        </a>\r\n                    </li>\r\n                    <li class='nav-item'>\r\n                        <a class='nav-link' href='#'>\r\n                            <img src='images/facebook.svg' alt='facebook'>\r\n                        </a>\r\n                    </li>\r\n                    <li class='nav-item'>\r\n                        <a class='nav-link' href='#'>\r\n                            <img src='images/instagram.svg' alt='instagram'>\r\n                        </a>\r\n                    </li>\r\n                </ul>\r\n                <button class='avatarBtn'>\r\n                    <img class='avatar' src='$userPhoto' alt='photo'>\r\n                </button>\r\n            </div>\r\n        </div>\r\n    </nav>\r\n</header>            \r\n\";\r\n        }\r\n        else {\r\n            echo \"\r\n<header>\r\n    <div class='container'>\r\n        <div class='container-fluid'>\r\n            <a href='#'>\r\n                <img class='logo' src='images/logo.svg' alt='logo'/>\r\n            </a>\r\n            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarColor02'\r\n                    aria-controls='navbarColor02' aria-expanded='false' aria-label='Toggle navigation'>\r\n                <span class='navbar-toggler-icon'></span>\r\n            </button>\r\n            <div class='collapse navbar-collapse' id='navbarColor02'>\r\n                <ul class='navbar-nav me-auto mb-2 mb-lg-0'>\r\n                    <li class='nav-item'>\r\n                        <a class='nav-link' href='#'>Find recipe</a>\r\n                    </li>\r\n                    <li class='nav-item'>\r\n                        <a class='nav-link active' aria-current='page' href='#'>Sign Up</a>\r\n                    </li>\r\n                    <li class='nav-item'>\r\n                        <a class='nav-link' href='#'>Sign In</a>\r\n                    </li>\r\n                </ul>\r\n                <ul class='navbar-nav me-auto mb-2 mb-lg-0'>\r\n                    <li class='nav-item'>\r\n                        <a class='nav-link active' aria-current='page' href='#'>\r\n                            <img src='images/telegram.svg' alt='telegram'>\r\n                        </a>\r\n                    </li>\r\n                    <li class='nav-item'>\r\n                        <a class='nav-link' href='#'>\r\n                            <img src='images/facebook.svg' alt='facebook'>\r\n                        </a>\r\n                    </li>\r\n                    <li class='nav-item'>\r\n                        <a class='nav-link' href='#'>\r\n                            <img src='images/instagram.svg' alt='instagram'>\r\n                        </a>\r\n                    </li>\r\n                </ul>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</header>    \r\n\";\r\n        }\r\n    }\r\n\r\n    function getFooter() {\r\n        echo \"\r\n<footer>\r\n    <div class='container-fluid container d-flex align-items-center justify-content-space-between'>\r\n        <img src='images/logo.svg' alt='logo' class='logo'/>\r\n        <div class='social-medias' style='margin-left: 100px'>\r\n            <a href='#'>\r\n                <img src='images/telegram.svg' alt='telegram'>\r\n            </a>\r\n            <a href='#'>\r\n                <img src='images/facebook.svg' alt='facebook'>\r\n            </a>\r\n            <a href='#'>\r\n                <img src='images/instagram.svg' alt='instagram'>\r\n            </a>\r\n        </div>\r\n    </div>\r\n</footer>        \r\n\";\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/WebPage.php b/WebPage.php
+--- a/WebPage.php	(revision da2fed0e7e1f33836e9ffbd3874019afaa45200f)
++++ b/WebPage.php	(date 1652286131280)
+@@ -30,6 +30,7 @@
+ 
+     function getHeader($currentUser) {
+         $userPhoto = "images/" . $currentUser['photo'];
++        $userName = $currentUser['username'];
+         if($this->isAuthorized) {
+             echo "
+ <header>
+@@ -64,9 +65,22 @@
+                         </a>
+                     </li>
+                 </ul>
+-                <button class='avatarBtn'>
+-                    <img class='avatar' src='$userPhoto' alt='photo'>
+-                </button>
++                <div class='dropdown'>
++                    <a href='#' class='avatarBtn dropdown-toggle' id='dropdownUserInfo' data-bs-toggle='dropdown' aria-expanded='false'>
++                        <img class='avatar' src='$userPhoto' alt='photo'>
++                    </a>
++                    <div class='dropdown-menu'>
++                        <h3>Hello, <?php $userName ?></h3>
++                        <ul aria-labelledby='dropdownUserInfo' data-popper-placement='bottom-start'>
++                            <li>
++                                <a href='logout.php' class='dropdown-item'>Logout</a>
++                            </li>
++                            <li>
++                                <a href='delete-account.php' class='dropdown-item'>Delete account</a>
++                            </li>
++                        </ul>
++                    </div>
++                </div>
+             </div>
+         </div>
+     </nav>
+Index: DB.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\r\n\r\nclass DB\r\n{\r\n    private string $dbName = \"db/cookdise.db\";\r\n    private PDO $pdo;\r\n\r\n    public function openConnection(): PDO\r\n    {\r\n        $pdo = new PDO(\"sqlite:$this->dbName\");\r\n        $pdo->setAttribute(PDO::ERRMODE_EXCEPTION, PDO::ATTR_ERRMODE);\r\n\r\n        $this->pdo = $pdo;\r\n\r\n        return $this->pdo;\r\n    }\r\n\r\n    public function closeConnection()\r\n    {\r\n        if ($this->pdo != \"\") {\r\n            unset($this->pdo);\r\n        }\r\n    }\r\n\r\n    public function execute($query, $params = [])\r\n    {\r\n        if ($query) {\r\n            try {\r\n                $stmt = $this->pdo->prepare($query);\r\n                $stmt->execute($params);\r\n\r\n                return $stmt->fetchAll(PDO::FETCH_ASSOC);\r\n\r\n            } catch (PDOException $exception) {\r\n                return $exception->errorInfo;\r\n            }\r\n        }\r\n        return null;\r\n    }\r\n\r\n    public function getTable($tableName)\r\n    {\r\n        try {\r\n            $stmt = $this->pdo->query('SELECT * FROM '.$tableName);\r\n            if($stmt) {\r\n                return $stmt->fetchAll(PDO::FETCH_ASSOC);\r\n            }\r\n            return [];\r\n        } catch (PDOException $exception) {\r\n            return $exception->errorInfo;\r\n        }\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/DB.php b/DB.php
+--- a/DB.php	(revision da2fed0e7e1f33836e9ffbd3874019afaa45200f)
++++ b/DB.php	(date 1652286782706)
+@@ -50,4 +50,14 @@
+             return $exception->errorInfo;
+         }
+     }
++
++    public function deleteRows($tableName, $params) {
++        $column = $params['column'];
++        $value = $params['value'];
++        if($tableName && $params) {
++            $stmt = $this->pdo->prepare("DELETE FROM $tableName WHERE :column = :value");
++            return $stmt->execute($params);
++        }
++        return false;
++    }
+ }
+\ No newline at end of file
+Index: delete-account.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/delete-account.php b/delete-account.php
+new file mode 100644
+--- /dev/null	(date 1652286782716)
++++ b/delete-account.php	(date 1652286782716)
+@@ -0,0 +1,21 @@
++<?php
++require_once 'DB.php';
++session_start();
++
++$db = new DB();
++
++$params = [
++    ":column" => 'user_id',
++    ":value" => $_SESSION['currentUser']['user_id']
++];
++$db->openConnection();
++
++$res = $db->deleteRows('users', $params);
++
++$db->closeConnection();
++if($res) {
++    header('Location: logout.php');
++    die();
++}
++header('Location: index.php');
++die();
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"23aa0825-37b1-47a5-accd-b02a005261f9\" name=\"Changes\" comment=\"\">\r\n      <change afterPath=\"$PROJECT_DIR$/AuthLayout.php\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/AuthUser.php\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/dataSources.local.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/dataSources.local.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/dataSources/703a7e0e-afef-4a0d-bf91-b016959fb343.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/dataSources/703a7e0e-afef-4a0d-bf91-b016959fb343.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/DB.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/DB.php\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/MainPage.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/MainPage.php\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/WebPage.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/WebPage.php\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/db/cookdise.db\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/db/cookdise.db\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/index.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/index.php\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"ComposerSettings\">\r\n    <execution />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"JavaScript File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"PhpWorkspaceProjectConfiguration\" interpreter_name=\"PHP7.4\" />\r\n  <component name=\"ProjectId\" id=\"28kfW5GJuqy361Ynn13irEZgK9E\" />\r\n  <component name=\"ProjectLevelVcsManager\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"node.js.detected.package.eslint\" value=\"true\" />\r\n    <property name=\"node.js.detected.package.tslint\" value=\"true\" />\r\n    <property name=\"node.js.selected.package.eslint\" value=\"(autodetect)\" />\r\n    <property name=\"node.js.selected.package.tslint\" value=\"(autodetect)\" />\r\n    <property name=\"vue.rearranger.settings.migration\" value=\"true\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\xampp\\htdocs\\SMP\\Lb1\\images\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"23aa0825-37b1-47a5-accd-b02a005261f9\" name=\"Changes\" comment=\"\" />\r\n      <created>1651765543927</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1651765543927</updated>\r\n      <workItem from=\"1651765546376\" duration=\"6166000\" />\r\n      <workItem from=\"1652191382467\" duration=\"5015000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <option name=\"ADD_EXTERNAL_FILES_SILENTLY\" value=\"true\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision da2fed0e7e1f33836e9ffbd3874019afaa45200f)
++++ b/.idea/workspace.xml	(date 1652287016513)
+@@ -5,16 +5,11 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="23aa0825-37b1-47a5-accd-b02a005261f9" name="Changes" comment="">
+-      <change afterPath="$PROJECT_DIR$/AuthLayout.php" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/AuthUser.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/703a7e0e-afef-4a0d-bf91-b016959fb343.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/703a7e0e-afef-4a0d-bf91-b016959fb343.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/delete-account.php" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/logout.php" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/DB.php" beforeDir="false" afterPath="$PROJECT_DIR$/DB.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/MainPage.php" beforeDir="false" afterPath="$PROJECT_DIR$/MainPage.php" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/WebPage.php" beforeDir="false" afterPath="$PROJECT_DIR$/WebPage.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/db/cookdise.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/cookdise.db" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -52,6 +47,7 @@
+     <property name="node.js.detected.package.tslint" value="true" />
+     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+     <property name="node.js.selected.package.tslint" value="(autodetect)" />
++    <property name="nodejs_package_manager_path" value="npm" />
+     <property name="vue.rearranger.settings.migration" value="true" />
+   </component>
+   <component name="RecentsManager">
+@@ -68,7 +64,9 @@
+       <option name="presentableId" value="Default" />
+       <updated>1651765543927</updated>
+       <workItem from="1651765546376" duration="6166000" />
+-      <workItem from="1652191382467" duration="5015000" />
++      <workItem from="1652191382467" duration="5294000" />
++      <workItem from="1652205063004" duration="652000" />
++      <workItem from="1652285332940" duration="1668000" />
+     </task>
+     <servers />
+   </component>
+Index: logout.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/logout.php b/logout.php
+new file mode 100644
+--- /dev/null	(date 1652287001191)
++++ b/logout.php	(date 1652287001191)
+@@ -0,0 +1,7 @@
++<?php
++
++session_start();
++session_destroy();
++
++header('Location: index.php');
++die();
+\ No newline at end of file
