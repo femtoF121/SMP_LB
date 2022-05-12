@@ -34,6 +34,7 @@ else {
     <div class="auth__container">
         <div class="forms__card">
             <form method="post" action="AuthUser.php" class="auth__form" >
+                <h2 style="margin: 0 auto;"><?php echo strtoupper($typeOfAuth) ?></h2>
                 <h5 style="color: red">
                     <?php if(!empty($_SESSION['authError'])) {
                         echo $_SESSION['authError'];

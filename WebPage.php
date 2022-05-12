@@ -30,6 +30,7 @@ class WebPage
 
     function getHeader($currentUser) {
         $userPhoto = "images/" . $currentUser['photo'];
+        $username = $currentUser['username'];
         if($this->isAuthorized) {
             echo "
 <header>
@@ -64,9 +65,16 @@ class WebPage
                         </a>
                     </li>
                 </ul>
-                <button class='avatarBtn'>
+                <div class='dropdown'>
+                  <a href='#' class='avatarBtn dropdown-toggle' id='dropdownUser1' data-bs-toggle='dropdown' aria-expanded='false'>
                     <img class='avatar' src='$userPhoto' alt='photo'>
-                </button>
+                  </a>
+                  <ul class='dropdown-menu text-small' aria-labelledby='dropdownUser1'>
+                    <li><h5 style='padding: 10px'>Hello, $username</h5></li>
+                    <li><a class='dropdown-item' href='logout.php'>Logout</a></li>
+                    <li><a class='dropdown-item' href='delete-account.php' style='color: darkred'>Delete account</a></li>
+                  </ul>
+                </div>
             </div>
         </div>
     </nav>

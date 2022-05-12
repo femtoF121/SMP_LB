@@ -64,4 +64,17 @@ class DB
             return $exception->errorInfo;
         }
     }
+
+    public function deleteRows($table, $params)
+    {
+        try{
+            $this->pdo->query("DELETE FROM " . $table . " WHERE " . $params['column'] . " = " . $params['value']);
+            return true;
+        }
+        catch (Exception $exception) {
+            echo $exception->getMessage();
+            return false;
+        }
+
+    }
 }
