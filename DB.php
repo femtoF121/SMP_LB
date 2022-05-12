@@ -38,31 +38,19 @@ class DB
         return null;
     }
 
-//    public function addRow($table, $info) {
-//        if ($table && $info && $this->pdo !== "") {
-//            try {
-//                $sql = "INSERT INTO :table () VALUES ()";
-//
-//                while($columnName = $info) {
-//
-//                }
-//
-//                while($value = $info) {
-//
-//                }
-//
-//                $sql +=
-//
-//                $params = [];
-//                $stmt = $this->pdo->prepare($sql);
-//
-//                return $stmt->execute($params);
-//            } catch (PDOException $exception) {
-//                return $exception->errorInfo;
-//            }
-//        }
-//        return false;
-//    }
+    public function executeBool($query, $params = [])
+    {
+        if ($query) {
+            try {
+                $stmt = $this->pdo->prepare($query);
+                return $stmt->execute($params);
+
+            } catch (PDOException $exception) {
+                return $exception->errorInfo;
+            }
+        }
+        return null;
+    }
 
     public function getTable($tableName)
     {

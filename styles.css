@@ -157,3 +157,121 @@ header .container {
     margin-left: 15px;
     box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
 }
+
+.adding-recipe-main-container {
+    margin: 5vh;
+    display: flex;
+    flex-direction: column;
+    border-radius: 40px;
+    height: 100%;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #ffffff;
+}
+
+.adding-recipe-photo-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 50%;
+    margin: 7vh;
+    height: 30vh;
+    text-align: center;
+    background-color: transparent;
+    border-radius: 20px;
+    border: 2px var(--secondaryColor) solid;
+}
+
+.adding-recipe-input {
+    resize: none;
+    word-wrap: anywhere;
+    padding: 5px 10px 5px 10px;
+    border: 2px var(--secondaryColor) solid;
+    border-radius: 10px;
+}
+
+.input__wrapper {
+    width: 100%;
+    position: relative;
+    margin: 15px 0;
+    text-align: center;
+}
+
+.input__file {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+}
+
+.input__file-icon-wrapper {
+    height: 60px;
+    width: 60px;
+    margin-right: 15px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    border-right: 1px solid #fff;
+}
+
+.input__file-button-text {
+    line-height: 1;
+    margin-top: 1px;
+}
+
+.input__file-button {
+    width: 100%;
+    max-width: 290px;
+    height: 60px;
+    background: #1bbc9b;
+    color: #fff;
+    font-size: 1.125rem;
+    font-weight: 700;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    border-radius: 3px;
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+.auth__container {
+    background: url("images/auth-bg.jpg") center/cover no-repeat;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.forms__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 10px 30px;
+    border-radius: 15px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    min-height: 280px;
+    min-width: 400px;
+}
