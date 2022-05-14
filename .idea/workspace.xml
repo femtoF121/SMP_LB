@@ -1,24 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="c4c4e579-cad7-4928-a442-f8497e9776fa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/delete-account.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logout.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/03b4a107-c3c4-4b3e-94ff-6d37ad05005b.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/703a7e0e-afef-4a0d-bf91-b016959fb343.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_05_2022_20_05_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_05_2022_20_05__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_05_2022_19_37_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/addRecipe.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/functions/sql.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/adding-recipe-page.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/adding-recipe-page.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/main.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AuthLayout.php" beforeDir="false" afterPath="$PROJECT_DIR$/AuthLayout.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB.php" beforeDir="false" afterPath="$PROJECT_DIR$/DB.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthLayout.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/authLayout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/authUser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recipe.php" beforeDir="false" afterPath="$PROJECT_DIR$/Recipe.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebPage.php" beforeDir="false" afterPath="$PROJECT_DIR$/WebPage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/recipeCard.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/cookdise.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/cookdise.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adding-recipe-page.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dbHardCode.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/delete-account.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/delete-account.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logout.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/logout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/RecipesModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/RecipesModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recipe-page.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/recipe-page.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +31,13 @@
   </component>
   <component name="ComposerSettings">
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -44,7 +55,18 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\SmP\Lb\controllers" />
+      <recent name="C:\xampp\htdocs\SmP\Lb\views" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -54,7 +76,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1652389245064</updated>
-      <workItem from="1652389247656" duration="153000" />
+      <workItem from="1652389247656" duration="502000" />
+      <workItem from="1652392249151" duration="1334000" />
+      <workItem from="1652530596702" duration="6975000" />
     </task>
     <servers />
   </component>

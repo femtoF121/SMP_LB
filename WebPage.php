@@ -45,7 +45,7 @@ class WebPage
                         <button class='secondaryBtn'>Find recipe</button>
                     </li>
                     <li class='nav-item'>
-                        <a href='adding-recipe-page.php'><button class='secondaryBtn'>Add recipe</button></a>
+                        <a href='views/adding-recipe-page.php'><button class='secondaryBtn'>Add recipe</button></a>
                     </li>
                 </ul>
                 <ul class='navbar-nav me-auto social-medias'>
@@ -71,8 +71,8 @@ class WebPage
                   </a>
                   <ul class='dropdown-menu text-small' aria-labelledby='dropdownUser1'>
                     <li><h5 style='padding: 10px'>Hello, $username</h5></li>
-                    <li><a class='dropdown-item' href='logout.php'>Logout</a></li>
-                    <li><a class='dropdown-item' href='delete-account.php' style='color: darkred'>Delete account</a></li>
+                    <li><a class='dropdown-item' href='controllers/logout.php'>Logout</a></li>
+                    <li><a class='dropdown-item' href='controllers/delete-account.php' style='color: darkred'>Delete account</a></li>
                   </ul>
                 </div>
             </div>
