@@ -1,7 +1,7 @@
 <?php
-require_once "DB.php";
+require_once "../DB.php";
 
-function recipes_getAll(): array
+function getAllRecipes(): array
 {
     $db = new DB();
     $db->openConnection();
@@ -23,6 +23,10 @@ function recipes_getAll(): array
     return $editedRecipes;
 }
 
-function recipe_insert() {
+function recipe_insert($user, $recipe) {
+
+}
+
+function getRecipesOfUser($user) {
 
 }

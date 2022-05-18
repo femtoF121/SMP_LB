@@ -35,7 +35,7 @@ class Recipe
         echo "
 <div class='col'>
     <div class='card' style='width: 18rem;'>
-        <form method='post' action='recipe-page.php'>
+        <form method='post' action='views/recipe-page.php'>
             <img src='images/$this->photo' class='card-img-top' alt='$this->title'>
             <input type='hidden' name='currentRecipeId' value='$this->id'>
             <div class='card-body'>
