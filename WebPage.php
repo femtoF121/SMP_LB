@@ -28,61 +28,49 @@ class WebPage
 ";
     }
 
-    function getHeader($currentUser) {
+    function getHeader($currentUser)
+    {
         $userPhoto = "images/" . $currentUser['photo'];
         $username = $currentUser['username'];
-        if($this->isAuthorized) {
+        if ($this->isAuthorized) {
             echo "
 <header>
-    <nav class='navbar navbar-expand-lg'>
-        <div class='container container-fluid'>
-            <a class='logo mr-4' href='index.php'>
-                <img class='logo' src='images/logo.svg' alt='logo'/>
+    <nav class='container' style='height: 80px; justify-content: space-around; min-width: fit-content'>
+        <a class='logo mr-4' href='index.php'>
+            <img class='logo' src='images/logo.svg' alt='logo'/>
+        </a>
+        <div class='container' style='justify-content: space-evenly'>
+            <button class='secondaryBtn'>Find recipe</button>
+            <a href='adding-recipe-page.php'>
+                <button class='secondaryBtn'>Add recipe</button>
             </a>
-            <div class='collapse navbar-collapse'>
-                <ul class='navbar-nav me-auto' style='margin-left: 50px'>
-                    <li class='nav-item' style='margin-right: 20px'>
-                        <button class='secondaryBtn'>Find recipe</button>
-                    </li>
-                    <li class='nav-item'>
-                        <a href='adding-recipe-page.php'><button class='secondaryBtn'>Add recipe</button></a>
-                    </li>
-                </ul>
-                <ul class='navbar-nav me-auto social-medias'>
-                    <li class='nav-item'>
-                        <a class='nav-link active' aria-current='page' href='#'>
-                            <img src='images/telegram.svg' alt='telegram'>
-                        </a>
-                    </li>
-                    <li class='nav-item'>
-                        <a class='nav-link' href='#'>
-                            <img src='images/facebook.svg' alt='facebook'>
-                        </a>
-                    </li>
-                    <li class='nav-item'>
-                        <a class='nav-link' href='#'>
-                            <img src='images/instagram.svg' alt='instagram'>
-                        </a>
-                    </li>
-                </ul>
-                <div class='dropdown'>
-                  <a href='#' class='avatarBtn dropdown-toggle' id='dropdownUser1' data-bs-toggle='dropdown' aria-expanded='false'>
-                    <img class='avatar' src='$userPhoto' alt='photo'>
-                  </a>
-                  <ul class='dropdown-menu text-small' aria-labelledby='dropdownUser1'>
-                    <li><h5 style='padding: 10px'>Hello, $username</h5></li>
-                    <li><a class='dropdown-item' href='logout.php'>Logout</a></li>
-                    <li><a class='dropdown-item' href='delete-account.php' style='color: darkred'>Delete account</a></li>
-                  </ul>
-                </div>
-            </div>
+        </div>
+        <div class='container'>
+            <a class='nav-link active' aria-current='page' href='#'>
+                <img src='images/telegram.svg' alt='telegram'>
+            </a>
+            <a class='nav-link' href='#'>
+                <img src='images/facebook.svg' alt='facebook'>
+            </a>
+            <a class='nav-link' href='#'>
+                <img src='images/instagram.svg' alt='instagram'>
+            </a>
+        </div>
+        <div class='dropdown' style='flex-wrap: nowrap'>
+            <a href='#' class='avatarBtn dropdown-toggle' id='dropdownUser1' data-bs-toggle='dropdown' aria-expanded='false'>
+                <img class='avatar' src='$userPhoto' alt='photo'>
+            </a>
+            <ul class='dropdown-menu text-small' aria-labelledby='dropdownUser1'>
+                <li><h5 style='padding: 10px'>Hello, $username</h5></li>
+                <li><a class='dropdown-item' href='logout.php'>Logout</a></li>
+                <li><a class='dropdown-item' href='delete-account.php' style='color: darkred'>Delete account</a></li>
+            </ul>
         </div>
     </nav>
-</header>            
+</header>       
 ";
-        }
-        else {
-            echo "
+        } else {
+            echo "   
 <header>
     <div class='container'>
         <div class='container-fluid'>
@@ -130,7 +118,8 @@ class WebPage
         }
     }
 
-    function getFooter() {
+    function getFooter()
+    {
         echo "
 <footer>
     <div class='container-fluid container d-flex align-items-center justify-content-space-between'>

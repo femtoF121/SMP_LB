@@ -68,6 +68,7 @@ header .container {
 }
 
 .secondaryBtn {
+    white-space: nowrap;
     background-color: var(--secondaryColor);
     padding: 12px 35px;
     border-radius: 50px;
@@ -75,6 +76,14 @@ header .container {
     color: #fff;
     font-size: 18px;
     font-family: var(--accentFont);
+    border: 5px solid rgba(0, 141, 10, 0);
+    transition: 0.4s;
+}
+
+.secondaryBtn:hover {
+    transition: 0.4s linear;
+    border: 5px solid rgb(0, 141, 10);
+    background-color: #4ea435;
 }
 
 .social-medias {

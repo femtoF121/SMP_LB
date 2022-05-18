@@ -51,7 +51,7 @@ else {
                     Password
                     <input name="pass" type="password" placeholder="Password" class="form-control">
                 </label>
-                <button type="submit" class="btn btn-primary" style="background-color: #66B54E; border-color: #66B54E;"><?php echo strtoupper($typeOfAuth) ?></button>
+                <button type="submit" class="btn btn-success" style="background-color: #66B54E; border-color: #66B54E;"><?php echo strtoupper($typeOfAuth) ?></button>
             </form>
             <form method="get" action="AuthLayout.php">
                 <input type="hidden" name="typeOfAuth" value="<?php echo $typeOfAuth == 'login' ? 'signup' : 'login' ?>">
