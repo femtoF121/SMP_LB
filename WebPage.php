@@ -41,7 +41,7 @@ class WebPage
         </a>
         <div class='container' style='justify-content: space-evenly'>
             <button class='secondaryBtn'>Find recipe</button>
-            <a href='adding-recipe-page.php'>
+            <a href='views/adding-recipe-page.php'>
                 <button class='secondaryBtn'>Add recipe</button>
             </a>
         </div>
