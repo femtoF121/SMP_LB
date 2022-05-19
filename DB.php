@@ -7,7 +7,8 @@ class DB
 
     public function openConnection(): PDO
     {
-        $pdo = new PDO("sqlite:$this->dbName");
+        $a = $_SERVER['DOCUMENT_ROOT']."/";
+        $pdo = new PDO("sqlite:$a$this->dbName");
         $pdo->setAttribute(PDO::ERRMODE_EXCEPTION, PDO::ATTR_ERRMODE);
 
         $this->pdo = $pdo;

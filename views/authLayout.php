@@ -2,7 +2,7 @@
 session_start();
 
 if(isset($_SESSION['currentUser'])) {
-    header('Location: index.php');
+    header('Location: ../index.php');
     die();
 }
 
@@ -53,7 +53,7 @@ else {
                 </label>
                 <button type="submit" class="btn btn-success" style="background-color: #66B54E; border-color: #66B54E;"><?php echo strtoupper($typeOfAuth) ?></button>
             </form>
-            <form method="get" action="authLayout.php">
+            <form method="get" action="../views/authLayout.php">
                 <input type="hidden" name="typeOfAuth" value="<?php echo $typeOfAuth == 'login' ? 'signup' : 'login' ?>">
                 <button type="submit" style="display: block; margin: 0 auto" class="btn btn-link"><?php echo $typeOfAuth == 'login' ? 'Signup' : 'Login' ?></button>
             </form>

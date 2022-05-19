@@ -1,5 +1,5 @@
 <?php
-require_once "DB.php";
+require_once $_SERVER['DOCUMENT_ROOT']."/DB.php";
 
 session_start();
 
@@ -17,7 +17,7 @@ function loginUser($db, $email, $password)
     } else {
         $_SESSION['authError'] = 'No such user';
     }
-    header("Location: index.php");
+    header("Location: ../index.php");
     die();
 }
 
@@ -31,7 +31,7 @@ if (!empty($_POST['pass']) && !empty($_POST['email']) && !empty($_POST['typeOfAu
         $suchUser = $db->execute("SELECT * FROM users WHERE email = :email", [":email" => $_POST['email']]);
         if($suchUser) {
             $_SESSION['authError'] = 'There is user with this email';
-            header("Location: index.php");
+            header("Location: ../index.php");
             die();
         }
         $props = [
@@ -51,5 +51,5 @@ if (!empty($_POST['pass']) && !empty($_POST['email']) && !empty($_POST['typeOfAu
     $_SESSION['authError'] = 'There shouldn\'t be empty fields';
 }
 
-header('Location: index.php');
+header('Location: ../index.php');
 die();

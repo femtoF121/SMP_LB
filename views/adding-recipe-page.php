@@ -1,10 +1,10 @@
 <?php
-require_once '../WebPage.php';
-require_once "../models/RecipesModel.php";
+require_once $_SERVER['DOCUMENT_ROOT'].'/WebPage.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/models/RecipesModel.php';
 
 session_start();
 if (!isset($_SESSION['currentUser'])) {
-    header("Location: authLayout.php");
+    header("Location: ../views/authLayout.php");
     die();
 }
 
