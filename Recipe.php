@@ -35,8 +35,8 @@ class Recipe
         echo "
 <div class='col'>
     <div class='card' style='width: 18rem;'>
-        <form method='post' action='recipe-page.php'>
-            <img src='images/$this->photo' class='card-img-top' alt='$this->title'>
+        <form method='post' action='views/recipe-page.php'>
+            <img src='../images/$this->photo' class='card-img-top' alt='$this->title'>
             <input type='hidden' name='currentRecipeId' value='$this->id'>
             <div class='card-body'>
                 <h5 class='card-title'>$this->title</h5>
@@ -60,7 +60,7 @@ class Recipe
         <div class='recipe-page-title'><h1>$this->title</h1></div>    
         <div class='recipe-top'>
             <div style='flex-basis: 50%; margin-right: 15px'>
-                <img src='images/$this->photo' class='recipe-main-photo' alt='$this->title'>
+                <img src='../images/$this->photo' class='recipe-main-photo' alt='$this->title'>
             </div>
             <div class='recipe-ingredients-container'>
                 <div style='display: flex; flex-direction: column; padding: 20px; height: 100%'>
@@ -81,8 +81,8 @@ class Recipe
                     </div>
                     <div style='display: flex; align-items: flex-end; flex-grow: 1'>$this->description</div>
                     <div style='display: flex; justify-content: space-between; margin: 15px 0 5px 0'>
-                        <div><img src='images/view.png' alt='Views' width='20px'> $this->views</div>
-                        <div><img src='images/like.png' alt='Likes' width='20px'> $this->likes</div>
+                        <div><img src='../images/view.png' alt='Views' width='20px'> $this->views</div>
+                        <div><img src='../images/like.png' alt='Likes' width='20px'> $this->likes</div>
                     </div>
                 </div>
             </div>
@@ -107,7 +107,7 @@ class Recipe
 
             echo "
 <div class='col d-flex flex-column align-items-center justify-content-end'>
-    <img src='images/".$this->steps[$num]['photo']."' class='recipe-step-photo' alt=''>
+    <img src='../images/".$this->steps[$num]['photo']."' class='recipe-step-photo' alt=''>
     <div>
     <b>$stepNum. </b>
     ".$this->steps[$num]['description']."

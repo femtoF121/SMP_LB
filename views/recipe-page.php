@@ -1,7 +1,12 @@
 <?php
-require_once "RecipePage.php";
-require_once "models/RecipesModel.php";
+require_once "../RecipePage.php";
+require_once "../models/RecipesModel.php";
 session_start();
+
+if(!isset($_SESSION['currentUser'])){
+    header("Location: authLayout.php");
+    die();
+}
 
 $recipe = null;
 

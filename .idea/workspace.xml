@@ -6,8 +6,21 @@
   <component name="ChangeListManager">
     <list default="true" id="c4c4e579-cad7-4928-a442-f8497e9776fa" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/DB.php" beforeDir="false" afterPath="$PROJECT_DIR$/DB.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recipe.php" beforeDir="false" afterPath="$PROJECT_DIR$/Recipe.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebPage.php" beforeDir="false" afterPath="$PROJECT_DIR$/WebPage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/authUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/authUser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/delete-account.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/delete-account.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/logout.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/logout.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/cookdise.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/cookdise.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/RecipesModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/RecipesModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/adding-recipe-page.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/adding-recipe-page.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/authLayout.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/authLayout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/recipe-page.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/recipe-page.php" afterDir="false" />
+>>>>>>> 20a53d0ce0ab34111632a7ada980e66112c5746a
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,34 +30,37 @@
   <component name="ComposerSettings">
     <execution />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP7.4" />
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
   <component name="ProjectId" id="2953h139MQgUl6xVJ7nCbNWVDFP" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\SmP\Lb" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\SmP\Lb\controllers" />
+      <recent name="C:\xampp\htdocs\SmP\Lb\views" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -55,8 +71,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1652389245064</updated>
-      <workItem from="1652389247656" duration="153000" />
-      <workItem from="1652886682881" duration="192000" />
+      <workItem from="1652389247656" duration="502000" />
+      <workItem from="1652392249151" duration="1334000" />
+<<<<<<< HEAD
+      <workItem from="1652530596702" duration="7605000" />
+=======
+      <workItem from="1652530596702" duration="6975000" />
+      <workItem from="1652953413537" duration="4027000" />
+      <workItem from="1652957642231" duration="8136000" />
+>>>>>>> 20a53d0ce0ab34111632a7ada980e66112c5746a
     </task>
     <servers />
   </component>

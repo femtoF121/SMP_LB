@@ -31,6 +31,10 @@ ul {
     padding: 0;
 }
 
+textarea {
+    resize: none;
+}
+
 .container {
     margin: 0 auto;
     max-width: 1200px;
@@ -68,6 +72,7 @@ header .container {
 }
 
 .secondaryBtn {
+    white-space: nowrap;
     background-color: var(--secondaryColor);
     padding: 12px 35px;
     border-radius: 50px;
@@ -75,6 +80,14 @@ header .container {
     color: #fff;
     font-size: 18px;
     font-family: var(--accentFont);
+    border: 5px solid rgba(0, 141, 10, 0);
+    transition: 0.4s;
+}
+
+.secondaryBtn:hover {
+    transition: 0.4s linear;
+    border: 5px solid rgb(0, 141, 10);
+    background-color: #4ea435;
 }
 
 .social-medias {
@@ -270,10 +283,18 @@ header .container {
     align-items: center;
 }
 
-.auth__form {
+form {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+}
+
+.auth__form {
+}
+
+.addRecipe__form {
+    margin: 0 auto;
+    max-width: 600px;
 }
 
 .forms__card {
@@ -286,4 +307,26 @@ header .container {
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     min-height: 280px;
     min-width: 400px;
+}
+
+.uploadLabel {
+    background-color: #ffde3c;
+    padding: 15px 0;
+    width: 200px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 15px;
+    display: block;
+    transition: all .2s ease-in-out;
+}
+
+.uploadLabel:hover {
+    background-color: #ffd922;
+    transition: all .2s ease-in-out;
+}
+
+.preview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
