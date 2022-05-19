@@ -19,7 +19,8 @@ function globalVisits() {
     fclose($fp);
 }
 
-function userVisitsCounter() {
+function userVisitsCounter(): array
+{
     $pdo = new PDO("sqlite:db/cookdise.db");
     $pdo->setAttribute(PDO::ERRMODE_EXCEPTION, PDO::ATTR_ERRMODE);
 

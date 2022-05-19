@@ -19,6 +19,7 @@ $page = new WebPage($_SESSION['currentUser']);
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CookDise</title>
+    <link rel='icon' href='/Lb/title-icon.png'>
     <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css' rel='stylesheet'
           integrity='sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3' crossorigin='anonymous'>
     <link rel='stylesheet' href='../styles.css'>
@@ -36,9 +37,11 @@ $page = new WebPage($_SESSION['currentUser']);
 <main class="main">
     <form class="form addRecipe__form" method="post" action="../controllers/addRecipe.php">
         <div>
-            <label for="uploadTitle" class="uploadLabel">Upload image</label>
+            <div class="recipeImageContainer">
+                <img class="preview" src='/Lb/images/placeholder-recipe.jpg' alt='step' style="object-fit: cover">
+            </div>
+            <label for="uploadTitle" class="uploadLabel" style="user-select: none">Upload image</label>
             <input name="recipeImage" class="recipeImageInput" id="uploadTitle" type="file" accept="image/*" hidden>
-            <div class="recipeImageContainer" style="width: 200px; height: 100px;"></div>
         </div>
         <div>
             <label for="title" class="form-label">Title of dish</label>
@@ -56,8 +59,11 @@ $page = new WebPage($_SESSION['currentUser']);
         <ul id="stepsList">
             <li id="step1" class="step d-flex align-items-center" style="margin-bottom: 15px;">
                 <div style="margin-right: 10px">
+                    <div class="stepImageContainer">
+                        <img class="preview" src='/Lb/images/placeholder-step.jpg' alt='step' style="object-fit: cover">
+                    </div>
                     <label for="uploadStepImage" class="uploadLabel">Upload image</label>
-                    <input name="stepImage" id="uploadStepImage" type="file" accept="image/*" hidden>
+                    <input name="stepImage" class="stepImageInput" id="uploadStepImage" type="file" accept="image/*" hidden>
                 </div>
                 <textarea name="steps[]" id="steps" class="form-control" placeholder="Wash your hands" rows="2"
                           style="margin-right: 10px"></textarea>
