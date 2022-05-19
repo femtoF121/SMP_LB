@@ -13,6 +13,6 @@ if(isset($_SESSION['currentUser'])) {
     $page->loadPage();
 }
 else {
-    header('Location: authLayout.php');
+    header('Location: views/authLayout.php');
     die();
 }

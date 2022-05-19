@@ -1,5 +1,5 @@
 <?php
-require_once 'DB.php';
+require_once $_SERVER['DOCUMENT_ROOT']."/DB.php";
 
 session_start();
 
@@ -9,5 +9,5 @@ $db->openConnection();
 $res = $db->deleteRows('users', ["column" => 'user_id', "value" => $_SESSION['currentUser']['user_id']]);
 
 $db->closeConnection();
-$res ? header("Location: logout.php") : header("Location: index.php");
+$res ? header("Location: logout.php") : header("Location: ../index.php");
 die();
