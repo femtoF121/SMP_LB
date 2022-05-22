@@ -36,12 +36,18 @@ $page = new WebPage($_SESSION['currentUser']);
 <?php $page->getHeader($_SESSION['currentUser']); ?>
 <main class="main">
     <form class="form addRecipe__form" method="post" action="../controllers/addRecipe.php">
-        <div>
-            <div class="recipeImageContainer">
-                <img class="preview" src='/Lb/images/placeholder-recipe.jpg' alt='step' style="object-fit: cover">
+        <div style="display:flex; align-items: center; justify-content: center; gap: 25px">
+            <div>
+                <div class="recipeImageContainer">
+                    <img class="preview" src='/Lb/images/placeholder-recipe.jpg' alt='step' style="object-fit: cover">
+                </div>
+                <label for="uploadTitle" class="uploadLabel" style="user-select: none">Upload image</label>
+                <input name="recipeImage" class="recipeImageInput" id="uploadTitle" type="file" accept="image/*" hidden>
             </div>
-            <label for="uploadTitle" class="uploadLabel" style="user-select: none">Upload image</label>
-            <input name="recipeImage" class="recipeImageInput" id="uploadTitle" type="file" accept="image/*" hidden>
+            <div>
+                <label for="time" class="form-label">Time of cooking</label>
+                <input name="time" id="time" class="form-control" placeholder="1h">
+            </div>
         </div>
         <div>
             <label for="title" class="form-label">Title of dish</label>
