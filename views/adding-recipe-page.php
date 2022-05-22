@@ -35,7 +35,7 @@ $page = new WebPage($_SESSION['currentUser']);
 <body>
 <?php $page->getHeader($_SESSION['currentUser']); ?>
 <main class="main">
-    <form class="form addRecipe__form" method="post" action="../controllers/addRecipe.php">
+    <form class="form addRecipe__form" method="post" action="/Lb/controllers/addRecipe.php">
         <div style="display:flex; align-items: center; justify-content: center; gap: 25px">
             <div>
                 <div class="recipeImageContainer">

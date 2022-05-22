@@ -25,18 +25,18 @@ if (!empty($_POST['title']) &&
 
     if($res) {
         $_SESSION['add-recipe-success'] = 'Successfully added new recipe!';
-        header('Location: index.php');
+        header('Location: ../index.php');
         die();
     }
     else {
         $_SESSION['add-recipe-error'] = 'Something went wrong';
-        header('Location: adding-recipe-page.php');
+        header('Location: ../views/adding-recipe-page.php');
         die();
     }
 
 } else {
     $_SESSION['add-recipe-error'] = 'All fields should be filled';
-    header('Location: adding-recipe-page.php');
+    header('Location: ../views/adding-recipe-page.php');
     die();
 }
 
