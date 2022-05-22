@@ -14,14 +14,6 @@ class MainPage extends WebPage
     {
         parent::__construct($isAuthorized);
 
-        globalVisits();
-        $file = 'logs.txt';
-        $globalVisitsFile = file($file);
-        $this->globalVisitsCount = count($globalVisitsFile);
-
-        $stat = userVisitsCounter();
-        $this->statCurrentUser = $stat['currentUser']['count'];
-
         $this->currentUser = $currentUser;
 
         if(!empty($_SESSION['recipes'])) {
@@ -29,6 +21,16 @@ class MainPage extends WebPage
                 $this->recipes[] = new Recipe($item);
             }
         }
+    }
+
+    function showStatistics() {
+        globalVisits();
+        $file = 'logs.txt';
+        $globalVisitsFile = file($file);
+        $this->globalVisitsCount = count($globalVisitsFile);
+
+        $stat = userVisitsCounter();
+        $this->statCurrentUser = $stat['currentUser']['count'];
     }
 
     function getContent()

@@ -9,7 +9,7 @@ if(isset($_SESSION['currentUser'])) {
     $_SESSION['recipes'] = $recipes;
 
     $page = new MainPage(true, $_SESSION['currentUser']);
-
+    $page->showStatistics();
     $page->loadPage();
 }
 else {

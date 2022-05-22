@@ -1,5 +1,6 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT']."/DB.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/DB.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/functions/sql.php";
 
 function getAllRecipes(): array
 {
@@ -23,10 +24,36 @@ function getAllRecipes(): array
     return $editedRecipes;
 }
 
-function recipe_insert($user, $recipe) {
+function insertRecipe($userId, $recipe): bool
+{
 
+    $recipeId = uniqid('');
+    $params = [
+        [
+            ":recipe_id" => $recipeId,
+            ":title" => $recipe['title'],
+            ":desc" => $recipe['description'],
+            ":ingredients" => $recipe['ingredients'],
+            ":time" => $recipe['time'],
+            ":userId" => $userId
+        ]
+    ];
+
+    $sqls = [
+        "INSERT INTO recipes (id, title, description, time, ingredients, user_id) VALUES (:recipe_id, :title, :desc, :time, :ingredients, :userId)",
+    ];
+
+    for ($i = 0; $i < count($_POST['steps']); $i++) {
+        $sqls[] = "INSERT INTO steps (recipe_id, step_number, description) VALUES (:recipeId, :stepNum, :desc)";
+        $params[] = [":recipeId" => $recipeId, ":stepNum" => $i + 1, ":desc" => $recipe['steps'][$i]];
+    }
+
+    $res = Sql_transaction($sqls, $params);
+
+    return $res;
 }
 
-function getRecipesOfUser($user) {
+function getRecipesOfUser($user)
+{
 
 }
