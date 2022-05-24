@@ -2,13 +2,18 @@
 
 class DB
 {
-    private string $dbName = "db/cookdise.db";
+    private string $dbName = '';
     private PDO $pdo;
+
+    public function __construct()
+    {
+        $this->dbName = $_SERVER['DOCUMENT_ROOT'] . '/db/cookdise.db';
+    }
 
     public function openConnection(): PDO
     {
         $a = $_SERVER['DOCUMENT_ROOT']."/";
-        $pdo = new PDO("sqlite:$a$this->dbName");
+        $pdo = new PDO("sqlite:$this->dbName");
         $pdo->setAttribute(PDO::ERRMODE_EXCEPTION, PDO::ATTR_ERRMODE);
 
         $this->pdo = $pdo;

@@ -19,6 +19,7 @@ $page = new WebPage($_SESSION['currentUser']);
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CookDise</title>
+    <link rel='icon' href='/Lb/title-icon.png'>
     <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css' rel='stylesheet'
           integrity='sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3' crossorigin='anonymous'>
     <link rel='stylesheet' href='../styles.css'>
@@ -34,11 +35,27 @@ $page = new WebPage($_SESSION['currentUser']);
 <body>
 <?php $page->getHeader($_SESSION['currentUser']); ?>
 <main class="main">
-    <form class="form addRecipe__form" method="post" action="../controllers/addRecipe.php">
-        <div>
-            <label for="uploadTitle" class="uploadLabel">Upload image</label>
-            <input name="recipeImage" class="recipeImageInput" id="uploadTitle" type="file" accept="image/*" hidden>
-            <div class="recipeImageContainer" style="width: 200px; height: 100px;"></div>
+    <form class="form addRecipe__form" method="post" action="/Lb/controllers/addRecipe.php" enctype="multipart/form-data">
+        <h4 style="color: darkred">
+            <?php
+            if(isset($_SESSION['add-recipe-error'])) {
+               echo $_SESSION['add-recipe-error'];
+               unset($_SESSION['add-recipe-error']);
+            }
+            ?>
+        </h4>
+        <div style="display:flex; align-items: center; justify-content: center; gap: 25px">
+            <div>
+                <div class="recipeImageContainer">
+                    <img class="preview" src='/Lb/images/placeholder-recipe.jpg' alt='step' style="object-fit: cover">
+                </div>
+                <label for="uploadTitle" class="uploadLabel" style="user-select: none">Upload image</label>
+                <input name="recipeImage" class="recipeImageInput" id="uploadTitle" type="file" accept="image/*" hidden>
+            </div>
+            <div>
+                <label for="time" class="form-label">Time of cooking</label>
+                <input name="time" id="time" class="form-control" placeholder="1h">
+            </div>
         </div>
         <div>
             <label for="title" class="form-label">Title of dish</label>
@@ -54,10 +71,15 @@ $page = new WebPage($_SESSION['currentUser']);
         </div>
         <label for="steps" class="form-label">Steps</label>
         <ul id="stepsList">
-            <li id="step1" class="step d-flex align-items-center" style="margin-bottom: 15px;">
+            <li class="step d-flex align-items-center" style="margin-bottom: 15px;">
                 <div style="margin-right: 10px">
-                    <label for="uploadStepImage" class="uploadLabel">Upload image</label>
-                    <input name="stepImage" id="uploadStepImage" type="file" accept="image/*" hidden>
+                    <div class="stepImageContainer">
+                        <img class="preview" src='/Lb/images/placeholder-step.jpg' alt='step' style="object-fit: cover">
+                    </div>
+                    <label class="uploadLabel">
+                        Upload image
+                        <input name="steps[]" class="stepImageInput" type="file" accept="image/*" hidden>
+                    </label>
                 </div>
                 <textarea name="steps[]" id="steps" class="form-control" placeholder="Wash your hands" rows="2"
                           style="margin-right: 10px"></textarea>
