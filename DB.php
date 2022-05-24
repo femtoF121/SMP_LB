@@ -2,8 +2,13 @@
 
 class DB
 {
-    private string $dbName = "db/cookdise.db";
+    private string $dbName = '';
     private PDO $pdo;
+
+    public function __construct()
+    {
+        $this->dbName = $_SERVER['DOCUMENT_ROOT'] . '/db/cookdise.db';
+    }
 
     public function openConnection(): PDO
     {

@@ -33,6 +33,7 @@ function insertRecipe($userId, $recipe): bool
             ":recipe_id" => $recipeId,
             ":title" => $recipe['title'],
             ":desc" => $recipe['description'],
+            ":photo" => $recipe['photo'],
             ":ingredients" => $recipe['ingredients'],
             ":time" => $recipe['time'],
             ":userId" => $userId
@@ -40,12 +41,12 @@ function insertRecipe($userId, $recipe): bool
     ];
 
     $sqls = [
-        "INSERT INTO recipes (id, title, description, time, ingredients, user_id) VALUES (:recipe_id, :title, :desc, :time, :ingredients, :userId)",
+        "INSERT INTO recipes (id, title, description, time, ingredients, user_id, photo) VALUES (:recipe_id, :title, :desc, :time, :ingredients, :userId, :photo)",
     ];
 
-    for ($i = 0; $i < count($_POST['steps']); $i++) {
-        $sqls[] = "INSERT INTO steps (recipe_id, step_number, description) VALUES (:recipeId, :stepNum, :desc)";
-        $params[] = [":recipeId" => $recipeId, ":stepNum" => $i + 1, ":desc" => $recipe['steps'][$i]];
+    for ($i = 0; $i < count($recipe['steps']); $i++) {
+        $sqls[] = "INSERT INTO steps (recipe_id, step_number, description, photo) VALUES (:recipeId, :stepNum, :desc, :photo)";
+        $params[] = [":recipeId" => $recipeId, ":stepNum" => $i + 1, ":desc" => $recipe['steps'][$i]['description'], ":photo" => $recipe['steps'][$i]['stepImage']];
     }
 
     $res = Sql_transaction($sqls, $params);

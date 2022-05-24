@@ -35,7 +35,15 @@ $page = new WebPage($_SESSION['currentUser']);
 <body>
 <?php $page->getHeader($_SESSION['currentUser']); ?>
 <main class="main">
-    <form class="form addRecipe__form" method="post" action="/Lb/controllers/addRecipe.php">
+    <form class="form addRecipe__form" method="post" action="/Lb/controllers/addRecipe.php" enctype="multipart/form-data">
+        <h4 style="color: darkred">
+            <?php
+            if(isset($_SESSION['add-recipe-error'])) {
+               echo $_SESSION['add-recipe-error'];
+               unset($_SESSION['add-recipe-error']);
+            }
+            ?>
+        </h4>
         <div style="display:flex; align-items: center; justify-content: center; gap: 25px">
             <div>
                 <div class="recipeImageContainer">
@@ -63,13 +71,15 @@ $page = new WebPage($_SESSION['currentUser']);
         </div>
         <label for="steps" class="form-label">Steps</label>
         <ul id="stepsList">
-            <li id="step1" class="step d-flex align-items-center" style="margin-bottom: 15px;">
+            <li class="step d-flex align-items-center" style="margin-bottom: 15px;">
                 <div style="margin-right: 10px">
                     <div class="stepImageContainer">
                         <img class="preview" src='/Lb/images/placeholder-step.jpg' alt='step' style="object-fit: cover">
                     </div>
-                    <label for="uploadStepImage" class="uploadLabel">Upload image</label>
-                    <input name="stepImage" class="stepImageInput" id="uploadStepImage" type="file" accept="image/*" hidden>
+                    <label class="uploadLabel">
+                        Upload image
+                        <input name="steps[]" class="stepImageInput" type="file" accept="image/*" hidden>
+                    </label>
                 </div>
                 <textarea name="steps[]" id="steps" class="form-control" placeholder="Wash your hands" rows="2"
                           style="margin-right: 10px"></textarea>
