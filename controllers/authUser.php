@@ -1,5 +1,6 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT']."/DB.php";
+require_once $_SERVER['DOCUMENT_ROOT']."/functions/checks.php";
 
 session_start();
 
@@ -7,6 +8,11 @@ $db = new DB();
 
 function loginUser($db, $email, $password)
 {
+    if(!CheckMail($email)) {
+        $_SESSION['authError'] = 'Invalid email';
+        header("Location: ../views/authLayout.php");
+        die();
+    }
     $props = [
         ":email" => $email,
         ":pass" => $password
@@ -17,7 +23,7 @@ function loginUser($db, $email, $password)
     } else {
         $_SESSION['authError'] = 'No such user';
     }
-    header("Location: ../index.php");
+    header("Location: ../views/authLayout.php");
     die();
 }
 
@@ -28,6 +34,17 @@ if (!empty($_POST['pass']) && !empty($_POST['email']) && !empty($_POST['typeOfAu
     if ($_POST['typeOfAuth'] == 'login') {
         loginUser($db, $_POST['email'], $_POST['pass']);
     } else if ($_POST['typeOfAuth'] == 'signup') {
+        if(!CheckMail($_POST['email'])) {
+            $_SESSION['authError'] = 'Invalid email';
+            header("Location: ../views/authLayout.php?typeOfAuth=signup");
+            die();
+        }
+        $checkPass = CheckPass($_POST['pass']);
+        if($checkPass != 'ok') {
+            $_SESSION['authError'] = $checkPass;
+            header("Location: ../views/authLayout.php?typeOfAuth=signup");
+            die();
+        }
         $suchUser = $db->execute("SELECT * FROM users WHERE email = :email", [":email" => $_POST['email']]);
         if($suchUser) {
             $_SESSION['authError'] = 'There is user with this email';

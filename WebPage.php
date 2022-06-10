@@ -63,6 +63,7 @@ class WebPage
             </a>
             <ul class='dropdown-menu text-small' aria-labelledby='dropdownUser1'>
                 <li><h5 style='padding: 10px'>Hello, $username</h5></li>
+                <li><a class='dropdown-item' href='/Lb/views/getDomain.php'>Get domain</a></li>
                 <li><a class='dropdown-item' href='/Lb/controllers/logout.php'>Logout</a></li>
                 <li><a class='dropdown-item' href='/Lb/controllers/delete-account.php' style='color: darkred'>Delete account</a></li>
             </ul>

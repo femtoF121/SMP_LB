@@ -16,3 +16,5 @@ else {
     header('Location: views/authLayout.php');
     die();
 }
+
+
