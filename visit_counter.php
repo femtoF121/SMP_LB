@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 function globalVisits() {
     $agent = '';
@@ -6,8 +7,9 @@ function globalVisits() {
         $agent = $_SERVER['HTTP_USER_AGENT'];
     }
     $uri = $_SERVER['REQUEST_URI'];
-    $user = 'No';
-    if(isset($_SERVER['PHP_AUTH_USER'])) $user = $_SERVER['PHP_AUTH_USER'];
+    $user = 'no';
+    if (isset($_SESSION['currentUser'])) $user = $_SESSION['currentUser']['username'];
+    //if(isset($_SERVER['PHP_AUTH_USER'])) $user = $_SERVER['PHP_AUTH_USER'];
     $ip = $_SERVER['REMOTE_ADDR'];
     $ref = "No";
     if(isset($_SERVER['HTTP_REFERER'])) $ref = $_SERVER['HTTP_REFERER'];
