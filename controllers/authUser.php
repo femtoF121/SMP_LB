@@ -21,7 +21,7 @@ function loginUser($db, $email, $password)
     if (count($res) != 0) {
         $_SESSION['currentUser'] = $res[0];
     } else {
-        $_SESSION['authError'] = 'No such user';
+        $_SESSION[' authError'] = 'No such user';
     }
     header("Location: ../views/authLayout.php");
     die();

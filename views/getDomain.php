@@ -1,6 +1,6 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'].'/WebPage.php';
-require_once $_SERVER['DOCUMENT_ROOT'].'/functions/analyseLogs.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/LogsAndBrowserInfo.php';
 session_start();
 
 $domain = "";
@@ -11,7 +11,8 @@ $domain = "";
 
     $page = new WebPage(true);
     $lastLog = AnalyseLogs();
-    $userBrowser = get_browser($_SERVER['HTTP_USER_AGENT'], true);
+    $ua = GetBrowser();
+    $userBrowser= ["Your browser: " . $ua['name'], "version: " . $ua['version'], "platform: ". $ua['platform'], " reports: " . $ua['userAgent']];
 ?>
 <!doctype html>
 <html lang="en">
@@ -40,8 +41,10 @@ $domain = "";
             <h4 style="color: purple; text-align: center"><?php echo $lastLog[2] ?></h4>
     </div>
     <div class="forms__card">
-        <h4 style="color: green; text-align: center"><?php echo $userBrowser['parent'] ?></h4>
-        <h4 style="color: green; text-align: center"><?php echo $userBrowser['platform'] ?></h4>
+        <h4 style="color: green; text-align: center"><?php echo $userBrowser[0] ?></h4>
+        <h4 style="color: green; text-align: center"><?php echo $userBrowser[1] ?></h4>
+        <h4 style="color: green; text-align: center"><?php echo $userBrowser[2] ?></h4>
+        <p style="color: green; text-align: center"><?php echo $userBrowser[3] ?></p>
     </div>
 </div>
 </body>

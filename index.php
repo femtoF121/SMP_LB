@@ -2,8 +2,6 @@
 require_once "MainPage.php";
 require_once "models/RecipesModel.php";
 
-session_start();
-
 if(isset($_SESSION['currentUser'])) {
     $recipes = getAllRecipes();
     $_SESSION['recipes'] = $recipes;
