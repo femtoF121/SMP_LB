@@ -12,7 +12,7 @@ function ChangeBadWords($str) :void
     echo $str;
 }
 
-$domain = "";
+    $domain = "";
     if(!empty($_GET['url'])) {
         preg_match('/https?:\/\/([\w+\.?]+)\//', $_GET['url'], $matches);
         if(count($matches) != 0) $domain = $matches[1];

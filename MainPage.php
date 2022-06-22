@@ -1,7 +1,8 @@
 <?php
-require_once "WebPage.php";
-require_once "Recipe.php";
-require_once "visit_counter.php";
+require_once $_SERVER['DOCUMENT_ROOT']."/WebPage.php";
+require_once $_SERVER['DOCUMENT_ROOT']."/Recipe.php";
+require_once $_SERVER['DOCUMENT_ROOT']."/visit_counter.php";
+require_once $_SERVER['DOCUMENT_ROOT']."/functions/sql.php";
 
 class MainPage extends WebPage
 {
